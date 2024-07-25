@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+
+    <style>
+        .oldClass{
+            background-color: green;
+        }
+
+        .newClass{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="change-text">Origional Text</div>
+    <div id="change-backgroundColor">Background color changed</div>
+    <ul></ul>
+    <p>Remove this element</p>
+    <ul id="remove">
+        <li>its last child is removed</li>
+        <li>Remove this</li>
+    </ul>
+    <img id="myImage" src="issei.jpg" alt="My image">
+    <div id="myElement" class="oldClass">Changed css using dom</div>
+
+
+    <p id="chngtext">change on click of button</p>
+    <button id="button">Chnage Text</button>
+
+
+    <div id="mouseoverElement">Hover over me!</div>
+
+
+<script>
+         // Change the text inside the first div
+        document.getElementById('change-text').innerHTML="Changed text"
+         // Change the background color of the second div
+        document.getElementById('change-backgroundColor').style.backgroundColor='gray'
+        
+
+        // Create an div element
+        let divtext = "its div element created in javascript"
+        let div = document.createElement('div')
+        div.innerHTML=divtext
+        // Append the div to the body
+        document.body.appendChild(div)
+
+
+        // create a li element in a existing ul list
+
+        let li = document.createElement('li')
+        li.innerHTML = "its li element created in javascript"
+        // Append the li element inside the existing ul element
+        document.querySelector('ul').appendChild(li)
+
+        // Select a HTML element and remove it from the DOM.
+        let p = document.querySelector('p')
+        document.body.removeChild(p)
+
+        // Remove the last child of a specific HTML element.
+        const removeList = document.getElementById('remove');
+        removeList.removeChild(removeList.lastElementChild); 
+
+
+        // Task 7: Select an HTML element and change one of its attributes (e.g., src of an img tag).
+        const myImage = document.getElementById('myImage');
+
+        // Change the src attribute
+        myImage.src = 'runuprecords.png'; 
+
+
+
+
+        // Task 8: Add and remove a CSS class to/from an HTML element.
+        const myElement = document.getElementById('myElement');
+
+        // Add a class
+        myElement.classList.add('newClass'); 
+
+        // Remove a class
+        myElement.classList.remove('oldClass');
+
+
+
+        // Task 9:
+
+        document.getElementById('button').onclick = function(){
+            document.getElementById('chngtext').innerHTML='text changed'
+        }
+
+        // task 10: 
+        const mouseoverElement = document.getElementById('mouseoverElement');
+        mouseoverElement.addEventListener('mouseover', function() {
+            mouseoverElement.style.color = 'blue';
+        });
+        mouseoverElement.addEventListener('mouseout', function() {
+            mouseoverElement.style.color = 'black'; // Reset to default on mouse out
+        });
+
+    </script>
+</body>
+</html>
