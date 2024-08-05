@@ -39,3 +39,33 @@ myValue = localStorage.getItem(mykey)
 // Task 3: Create a simple form that saves user input (e.g., name and email) to localStorage when submitted. Retrieve and display the saved data on page load.
 
 // check Html file
+
+
+// Task 4: Write a script to remove an item from localStorage. Log the localStorage content before and after removal
+
+localStorage.setItem("Welcome", "Ankit")
+localStorage.setItem("enroll-No", 20)
+localStorage.setItem("country", "india")
+
+let welcome = localStorage.getItem('Welcome')
+let enrollNo = localStorage.getItem('enroll-No')
+let country = localStorage.getItem('country')
+
+// console.log(`LocalStorage before removal : `);
+// console.log(welcome);
+// console.log(enrollNo);
+// console.log(country);
+
+// console.log();
+
+enrollNo = localStorage.removeItem("enroll-No")
+
+// console.log(`LocalStorage after removal : `);
+// console.log(welcome);
+if (enrollNo) {
+// console.log(enrollNo);    
+}else{
+    // console.error("Error : enroll-No is removed from localStorage");
+    
+}
+// console.log(country);
