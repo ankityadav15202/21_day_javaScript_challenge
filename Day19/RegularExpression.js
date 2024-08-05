@@ -27,7 +27,7 @@ while((match = search.exec(string)) !== null){
 // Task 3: Write a regular expression to match all words in a string that start with a capital letter. Log the matches.
 
 string =  "This is A Sectence Containing "
-search = /\b[A-z][a-z]+\b/g
+search = /\b[A-Z][a-z]+\b/g
 match = null
 while ((match = search.exec(string)) !==null) {
     console.log(`Found match ${match[0]}`);

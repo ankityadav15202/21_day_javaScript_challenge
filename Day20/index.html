@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+</head>
+<body>
+    <h1>User Registration</h1>
+    <form action="#" id="userInformation">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email">
+
+        <input type="submit" value="submit">
+    </form>
+
+    <div id="savedInfo">
+        <h2>Saved userInformation</h2>
+        <p>Name : <span id="getname"></span></p>
+        <p>Email : <span id="getemail"></span></p>
+    </div>
+
+    <script>
+            let showName = document.getElementById('getname')
+            let showEmail = document.getElementById('getemail')    
+            
+            
+
+            window.onload = function(){
+
+                let savedName = localStorage.getItem("name")
+                let savedEmail = localStorage.getItem("email")
+
+                if(savedName){
+                    showName.innerText = savedName
+                }
+                if(savedEmail){
+                    showEmail.innerText = savedEmail
+                }
+            }
+
+            let form = document.getElementById('userInformation')
+            form.addEventListener('submit',function(e){
+                e.preventDefault();
+                let name = document.getElementById('name').value
+                let email = document.getElementById('email').value
+
+                localStorage.setItem("name", name)
+                localStorage.setItem("email", email)
+
+                showName.innerText=name
+                showEmail.innerText=email
+            })
+    </script>
+</body>
+</html>
