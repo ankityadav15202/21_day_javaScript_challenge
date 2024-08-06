@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+</head>
+<body>
+    <h1>Session Storage Form</h1>
+    <form action="" id="sessionForm">
+        <label for="name">Name : </label>
+        <input type="text" id="name" name="name">
+
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email">
+        
+        <input type="submit" value="submit" name="submit" id="submit">
+    </form>
+    <div>
+        <p>Name : <span id="retriveName"></span>
+        </p>
+        <p>Email : <span id="retriveEmail"></span> </p>
+    </div>
+    <script>
+        const Form = document.getElementById('sessionForm')
+        let showName = document.getElementById('retriveName')
+        let showEmail = document.getElementById('retriveEmail')
+        window.onload = function(){{
+                showName.innerText = sessionStorage.getItem('name')
+                showEmail.innerText = sessionStorage.getItem('email')
+            }}
+
+        Form.addEventListener('submit',function(e){
+            e.preventDefault()
+            const name = document.getElementById('name').value
+            const email = document.getElementById('email').value
+
+            sessionStorage.setItem('name',name) 
+            sessionStorage.setItem('email',email)  
+            
+            showName.innerText = name
+            showEmail.innerText = email
+
+
+        })
+    </script>
+</body>
+</html>

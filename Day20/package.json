@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "localstorage-memory": "^1.0.3"
+    "localstorage-memory": "^1.0.3",
+    "session": "^0.1.0",
+    "session-storage": "^1.0.1",
+    "storage": "^0.2.0"
   }
 }
