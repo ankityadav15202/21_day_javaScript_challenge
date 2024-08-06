@@ -133,7 +133,7 @@ function storage(key,value){
 
 }
 // storage("name","Ankit")`
-
+// Task 10: Write a function that clears all data from both localStorage and sessionStorage. Verify that both storages are empty.
 function clearStorage(){
     localStorage.clear()
     // sessionStorage.clear()
